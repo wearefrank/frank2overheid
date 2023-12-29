@@ -1,0 +1,733 @@
+<Configuration name="Digitale Checklisten Config">
+	<Adapter name="Templates"
+		description="Request returned een template voor een checklist">
+
+		<Receiver name="Templates">
+
+			<JavaListener name="Templates" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Templates">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/templates">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET Checklists"
+		description="For the post request you can omit everything except the 'name' of the checklist, and the user_id and user_ids needs to be a valid user within your organization.
+		template_id is optional if provided will generate the checklist with the right questions.
+		user_ids is optional if provided will couple the checklist to the list of users.
+		">
+
+		<Receiver name="GET Checklists">
+
+			<JavaListener name="GET Checklists" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET Checklists">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/checklists/1">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="POST Checklists"
+		description="Requires specific input, see configuration file">
+
+		<Receiver name="POST Templates">
+
+			<JavaListener name="POST Templates" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="POST Templates">
+				<!-- Configure HttpSender -->
+				<!-- 
+					{
+						"checklist": {
+							"id": 81773,
+							"group_id": 10,
+							"dossier_id": 61828,
+							"based_on": "ICT-beveiligingsrichtlijnen voor webapplicaties : Applicatiebeveiliging",
+							"case_number": null,
+							"checklist_type": 4,
+							"code": null,
+							"completed_on": null,
+							"created_at": "2015-01-18T18:45:46.000+01:00",
+							"violations_count": 2,
+							"answers_count": null,
+							"remarks_count": 0,
+							"deleted": null,
+							"inspection_date": null,
+							"location_id": null,
+							"name": "ICT-beveiligingsrichtlijnen voor webapplicaties : Applicatiebeveiliging 18-01-2015",
+							"organization_id": null,
+							"updated_at": "2015-01-18T18:45:46.000+01:00",
+							"user_id": 317,
+							"user_ids": [317],
+							"links": {
+							"answers": "answers",
+							"users": "users",
+							"categories": "categories",
+							"notes": "notes"
+							}
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/checklists"
+					methodType="POST">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="Answers"
+		description="Lists the answers for a particular checklist">
+
+		<Receiver name="Answers">
+
+			<JavaListener name="Answers" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Answers">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/checklists/1/answers">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="Users"
+		description="This resources shows the users within the organization">
+
+		<Receiver name="Users">
+
+			<JavaListener name="Users" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Users">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/users">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="Dossier types"
+		description="Because of the configurability of DigitaleChecklisten dossiers, we have a dossier type for every kind of dossier. The dossier_types are specific for each individual organisation (group)">
+
+		<Receiver name="Dossier types">
+
+			<JavaListener name="Dossier types" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Dossier types">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/dossier_types">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET ALL Dossier"
+		description="Retrieve all the top-level dossiers">
+
+		<Receiver name="GET ALL Dossier">
+
+			<JavaListener name="GET ALL Dossier" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET ALL Dossier">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/dossiers">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET SINGLE Dossier"
+		description="Show a single dossier !!! IT SEEMS THE API CALL IS THE SAME WITH GET ALL, DOCUMENTATION ERROR? !!!">
+
+		<Receiver name="GET SINGLE Dossier">
+
+			<JavaListener
+				name="GET SINGLE Dossier" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET SINGLE Dossier">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/dossiers">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="POST Dossier"
+		description="Create a dossier of a specific dossier type.
+		Values is a hash with fields specified in the corresponding dossier_type object.
+		The parameter dossier_type_id is mandatory, so the server knows what kind of dossier you want to create. Dossier types that are available for the group can be retrieved by GET: /api/v1/dossier_types">
+
+		<Receiver name="POST Dossier">
+
+			<JavaListener name="POST Dossier" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="POST Dossier">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+						"dossier": {
+							"dossier_type_id": 9,
+							"dossier_id": null,
+							"user_ids": [1, 2]
+							"values": {
+								"Naam": "730847 Zwembad de Tobbe",
+								"Dossiernummer": "123"
+							}
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/dossiers"
+					methodType="POST">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="POST Dossier W/ location"
+		description="Post with Location">
+
+		<Receiver name="POST Dossier W/ location">
+
+			<JavaListener name="POST Dossier W/ location" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="POST Dossier W/ location">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+						"dossier": {
+							"dossier_type_id": 9,
+							"dossier_id": null,
+							"user_ids": [1, 2]
+							"values": {
+								"Naam": "730847 Zwembad de Tobbe",
+								"Dossiernummer": "123"
+							}
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/dossiers"
+					methodType="POST">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="PUT Dossier"
+		description="Update Dossier">
+
+		<Receiver name="PUT Dossier">
+
+			<JavaListener name="PUT Dossier" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="PUT Dossier">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+						"dossier": {
+							"dossier_id": null,
+							"values": {
+								"Naam": "730847 Zwembad de Does."
+							}
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/dossiers/4085"
+					methodType="PUT">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET Locations"
+		description="Get Dossier">
+
+		<Receiver name="GET Locations">
+
+			<JavaListener name="GET Locations" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET Locations">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/locations">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="POST Locations"
+		description="POST locations">
+
+		<Receiver name="POST Locations">
+
+			<JavaListener name="POST Locations" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="POST Locations">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+					"location": {
+						"name": "Kantoor",
+						"address": "Linnaeusparkweg 109 III",
+						"city": "Amsterdam",
+						"zip": "1098 CV",
+						"lat": 52.353,
+						"lng": 4.9359
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/locations"
+					methodType="POST">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET ALL People"
+		description="Retrieve all people associated with your group">
+
+		<Receiver name="GET ALL People">
+
+			<JavaListener name="GET ALL People" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET ALL People">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/people">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="GET SINGLE Person"
+		description="Show a single person">
+
+		<Receiver name="GET SINGLE Person">
+
+			<JavaListener
+				name="GET SINGLE Person" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="GET SINGLE Person">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/people">
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="POST Person"
+		description="Create a contact person">
+
+		<Receiver name="POST Person">
+
+			<JavaListener name="POST Person" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="POST Person">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+					"person": {
+						"name": "Eddy Steenmeijer",
+						"dossier_ids": [36464],
+						"email": null,
+						"phonenumber": null,
+						"role": "Eigenaar"
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/people"
+					methodType="POST">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="PUT Person"
+		description="Update Contact person">
+
+		<Receiver name="PUT Person">
+
+			<JavaListener name="PUT Person" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="PUT Person">
+
+				<!-- Configure HttpSender -->
+				<!--
+					{
+						"person": {
+							"name": "Eddy Steenmeijers",
+							"email": null,
+							"phonenumber": null,
+							"role": "Eigenaar"
+						}
+					}
+				-->
+				<HttpSender
+					url="https://private-anon-2f85612008-digitalechecklisten.apiary-mock.com/api/v1/people/18196"
+					methodType="PUT">
+
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+</Configuration>

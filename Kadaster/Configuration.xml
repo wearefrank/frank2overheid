@@ -1,0 +1,347 @@
+<Configuration name="Kadaster Config">
+	<Adapter name="TestCredentials">
+		<Receiver name="TestCredentials">
+			<JavaListener name="TestCredentials" />
+		</Receiver>
+		<Pipeline firstPipe="printResult">
+			<FixedResultPipe name="printResult"
+				returnString="${credential:username:alias1} ${credential:password:alias1}">
+				<Forward name="success" path="EXIT" />
+			</FixedResultPipe>
+			<Exit path="EXIT" state="success" />
+		</Pipeline>
+	</Adapter>
+
+	<Adapter name="Kadaster Natuurlijke Personen"
+		description="Request om meer informatie te krijgen over Natuurlijke personen. Input: Jansens">
+
+		<Receiver name="Kadaster Natuurlijke Personen">
+
+			<JavaListener name="Kadaster Natuurlijke Personen" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Kadaster Natuurlijke Personen">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadasternatuurlijkpersonen?q=Jansens"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="Niet Natuurlijke Personen"
+		description="Request om meer informatie te krijgen over Niet Natuurlijke personen, zoals bedrijven. Input: Bankbedrijf">
+
+		<Receiver name="Niet Natuurlijke Personen">
+
+			<JavaListener name="Niet Natuurlijke Personen" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Niet Natuurlijke Personen">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadasternietnatuurlijkpersonen?q=Bankbedrijf"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+
+	</Adapter>
+
+
+	<Adapter name="KadastraalOnroerendeZaak"
+		description="Request om meer informatie te krijgen over onroerende zaken. Input: postcode= 7361EW, huisnummer= 29">
+
+		<Receiver name="KadastraalOnroerendeZaak">
+
+			<JavaListener name="KadastraalOnroerendeZaak" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="KadastraalOnroerendeZaak">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadastraalonroerendezaken?postcode=7361EW&amp;huisnummer=29"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Zakelijk Gerechtigden"
+		description="Request om meer informatie te krijgen over zakelijk gerechtigden doormiddel van een OnroerendeZaak Identificatie. Input: kadastraalOnroerendeZaakIdentificatie= 76870487970000">
+
+		<Receiver name="Zakelijk Gerechtigden">
+
+			<JavaListener name="Zakelijk Gerechtigden" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Zakelijk Gerechtigden">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadastraalonroerendezaken/76870487970000/zakelijkgerechtigden"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Hypotheek"
+		description="Request om meer informatie te krijgen over de Hypotheek van een object doormiddel van een OnroerendeZaak Identificatie. Input: kadastraalOnroerendeZaakIdentificatie= 76870487970000">
+
+		<Receiver name="Hypotheek">
+
+			<JavaListener name="Hypotheek" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Hypotheek">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadastraalonroerendezaken/76870487970000/hypotheken"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Beslagen"
+		description="Request om meer informatie te krijgen over de Beslagen van een object doormiddel van een OnroerendeZaak Identificatie. Input: kadastraalOnroerendeZaakIdentificatie= 17150075470000">
+
+		<Receiver name="Beslagen">
+
+			<JavaListener name="Beslagen" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Beslagen">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadastraalonroerendezaken/17150075470000/beslagen"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Privaatrechtelijke Beperkingen"
+		description="Request om meer informatie te krijgen over de Privaatrechtelijke Beperkingen van een object doormiddel van een OnroerendeZaak Identificatie. Input: kadastraalOnroerendeZaakIdentificatie= 76870487970000">
+
+		<Receiver name="Privaatrechtelijke Beperkingen">
+
+			<JavaListener name="Privaatrechtelijke Beperkingen" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Privaatrechtelijke Beperkingen">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/kadastraalonroerendezaken/76870487970000/privaatrechtelijkebeperkingen"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Publiekrechtelijke Beperkingen"
+		description="Request om meer informatie te krijgen over de Publiekrechtelijke Beperkingen van een object doormiddel van een OnroerendeZaak Identificatie. Input: kadastraalOnroerendeZaakIdentificatie= 76870487970000">
+
+		<Receiver name="Publiekrechtelijke Beperkingen">
+
+			<JavaListener name="Publiekrechtelijke Beperkingen" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Publiekrechtelijke Beperkingen">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/publiekrechtelijkebeperkingen?kadastraalOnroerendeZaakIdentificatie=76870487970000"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+
+
+	<Adapter name="Stukken" description="Input: stukIdentificatie= 20200227000564">
+
+		<Receiver name="Stukken">
+
+			<JavaListener name="Stukken" />
+		</Receiver>
+
+		<Pipeline>
+
+			<SenderPipe name="Stukken">
+
+				<!-- Configure HttpSender -->
+				<HttpSender
+					url="https://api.brk.kadaster.nl/esd-eto-apikey/bevragen/v2/stukken/20200227000564"
+					methodType="GET" headersParams="x-api-key">
+					<Param name="x-api-key" value="${credential:password:alias1}" />
+				</HttpSender>
+
+				<Forward name="success" path="EXIT" />
+				<Forward name="400" path="BadRequest" />
+				<Forward name="401" path="NotAuthenticated" />
+				<Forward name="404" path="NotFound" />
+				<Forward name="500" path="ServerError" />
+
+			</SenderPipe>
+
+			<EchoPipe name="echoPipe">
+
+			</EchoPipe>
+
+			<Exit path="EXIT" state="success" />
+
+		</Pipeline>
+	</Adapter>
+</Configuration>
