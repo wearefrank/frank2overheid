@@ -1,0 +1,49 @@
+{
+    "answers": [{
+		"id": 1116833,
+		"activity": "Overig",
+		"created_at": "2013-03-08T19:43:23+01:00",
+		"user_id": 317,
+		"value": 0,
+		"value_text": "Nee",
+		"value_open": null,
+		"priority": 1,
+		"question": {
+			"question": "Overige opmerkingen.",
+			"article": null,
+			"comment": null,
+			"explanation": null,
+			"letter_text_default": "*. Dit is een overtreding van . U dient binnen * de overtreding ongedaan te maken door *.",
+			"letter_text_offence": "*.",
+			"letter_text_undoing": "*.",
+			"regulation": "Overig",
+			"regulation_name": ""
+		},
+		"remarks": [],
+		"pictures": [],
+		"action": null
+	}, {
+		"id": 1116834,
+		"activity": "Mijn controles",
+		"created_at": "2013-03-08T19:43:23+01:00",
+		"user_id": 317,
+		"value": 2,
+		"value_text": "N.v.t.",
+		"value_open": null,
+		"priority": null,
+		"question": {
+			"question": "Wordt per checklist de volgende punten aangegeven: de naam, eigenaar, dossiernummer, zaaknummer, aantal vragen organisatie, locatie?",
+			"article": null,
+			"comment": null,
+			"explanation": null,
+			"letter_text_default": " Dit is een overtreding van . U dient binnen  de overtreding ongedaan te maken door *.",
+			"letter_text_offence": "",
+			"letter_text_undoing": "*.",
+			"regulation": "Mijn controles",
+			"regulation_name": null
+		},
+		"remarks": [],
+		"pictures": [],
+		"action": null
+	}]
+}

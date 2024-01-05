@@ -1,0 +1,11 @@
+{
+    "templates": [
+        {
+            "id": 123,
+            "name": "Checklist - Test nieuwe release"
+        },
+        {
+            "id": 234,
+            "name": "Checklist - Contentmanagement"
+        }
+    }

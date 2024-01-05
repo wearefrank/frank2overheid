@@ -1,0 +1,21 @@
+{
+  "locations": [{
+      "address": "Eglaan 8",
+      "city": "Veenendaal",
+      "dossier_ids": [
+        14179
+      ],
+      "id": 206,
+      "name": "Test chrome",
+      "zip": " 3930 cp"
+    },{
+      "address": "Koppeling 1",
+      "city": "Angerlo",
+      "dossier_ids": [
+        14207
+      ],
+      "id": 303,
+      "name": "Schel",
+      "zip": "6996ak"
+    }]
+}

@@ -1,0 +1,9 @@
+{
+					"person": {
+						"name": "Eddy Steenmeijer",
+						"dossier_ids": [36464],
+						"email": null,
+						"phonenumber": null,
+						"role": "Eigenaar"
+						}
+					}

@@ -1,0 +1,30 @@
+{
+    "dossiers": {
+		"id": 4085,
+		"dossier_type_id": 9,
+		"dossier_id": null,
+		"values": [{
+          "id": 2357523,
+          "dossier_id": 4085,
+          "field_id": 59,
+          "user_id": 2,
+          "content": "730847 Zwembad de Tobbe"
+        },{
+          "id": 2357524,
+          "dossier_id": 4085,
+          "field_id": 60,
+          "user_id": 2,
+          "content": "123"
+        }],
+		"created_at": "2013-06-10T22:17:23+02:00",
+		"updated_at": "2013-06-10T22:22:07+02:00",
+		"links": {
+          "checklists": "checklists",
+          "dossiers": "dossiers",
+          "users": "users",
+          "people": "people",
+          "notes": "notes"
+        }
+		"dossiers": []
+	}
+}

@@ -1,0 +1,101 @@
+{ 
+    "dossiers": [{
+        "id": 69318,
+        "group_id": 10,
+        "dossier_type_id": 142,
+        "dossier_id": null,
+        "name": "Test dossier",
+        "completed_on": null,
+        "deleted": false,
+        "created_at": "2015-02-04T20:27:57.000+01:00",
+        "updated_at": "2015-02-25T11:47:59.000+01:00",
+        "links": {
+          "checklists": "checklists",
+          "dossiers": "dossiers",
+          "users": "users",
+          "people": "people",
+          "notes": "notes"
+        },
+        "dossier_ids": [],
+        "checklist_ids": [],
+        "user_ids": [317],
+        "person_ids": [],
+        "documents": [],
+        "values": [{
+          "id": 179057,
+          "dossier_id": 69318,
+          "field_id": 897,
+          "user_id": null,
+          "content": "Test dossier"
+        }, {
+          "id": 179058,
+          "dossier_id": 69318,
+          "field_id": 898,
+          "user_id": null,
+          "content": "dossiernummer"
+        }, {
+          "id": 179059,
+          "dossier_id": 69318,
+          "field_id": 899,
+          "user_id": null,
+          "content": "zaaknummer"
+        }, {
+          "id": 179060,
+          "dossier_id": 69318,
+          "field_id": 900,
+          "user_id": null,
+          "content": "omschrijving"
+        }],
+        "locations": [{
+          "id": 87438,
+          "dossier_id": 69318,
+          "field_id": 901,
+          "name": "Kantoor",
+          "address": "Linnaeusparkweg 109 III",
+          "city": "Amsterdam",
+          "zip": "1098 CV",
+          "lat": 52.353,
+          "lng": 4.9359
+        }, {
+          "id": 87439,
+          "dossier_id": 69318,
+          "field_id": 902,
+          "name": "Digitale Checklisten",
+          "address": "Linnaeusparkweg 109 III ",
+          "city": "Amsterdam",
+          "zip": "1098 CV",
+          "lat": null,
+          "lng": null
+        }]
+      }, {
+        "id": 61828,
+        "group_id": 10,
+        "dossier_type_id": 142,
+        "dossier_id": null,
+        "name": "Test 101",
+        "completed_on": null,
+        "deleted": false,
+        "created_at": "2014-11-24T16:26:47.000+01:00",
+        "updated_at": "2015-01-18T18:45:22.000+01:00",
+        "links": {
+          "checklists": "checklists",
+          "dossiers": "dossiers",
+          "users": "users",
+          "people": "people",
+          "notes": "notes"
+        },
+        "dossier_ids": [],
+        "checklist_ids": [76728, 77974, 81773],
+        "user_ids": [317],
+        "person_ids": [],
+        "documents": [],
+        "values": [{
+          "id": 164107,
+          "dossier_id": 61828,
+          "field_id": 897,
+          "user_id": null,
+          "content": "Test 101"
+        }],
+        "locations": []
+      }]
+}

@@ -1,0 +1,30 @@
+{
+    "checklist": {
+        "id": 81773,
+        "group_id": 10,
+        "dossier_id": 61828,
+        "based_on": "ICT-beveiligingsrichtlijnen voor webapplicaties : Applicatiebeveiliging",
+        "case_number": null,
+        "checklist_type": 4,
+        "code": null,
+        "completed_on": null,
+        "created_at": "2015-01-18T18:45:46.000+01:00",
+        "violations_count": 2,
+        "answers_count": null,
+        "remarks_count": 0,
+        "deleted": null,
+        "inspection_date": null,
+        "location_id": null,
+        "name": "ICT-beveiligingsrichtlijnen voor webapplicaties : Applicatiebeveiliging 18-01-2015",
+        "organization_id": null,
+        "updated_at": "2015-01-18T18:45:46.000+01:00",
+        "user_id": 317,
+        "user_ids": [317],
+        "links": {
+          "answers": "answers",
+          "users": "users",
+          "categories": "categories",
+          "notes": "notes"
+        }
+    }
+}

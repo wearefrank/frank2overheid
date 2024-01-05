@@ -1,0 +1,11 @@
+{
+						"dossier": {
+							"dossier_type_id": 9,
+							"dossier_id": null,
+							"user_ids": [1, 2]
+							"values": {
+								"Naam": "730847 Zwembad de Tobbe",
+								"Dossiernummer": "123"
+							}
+						}
+					}

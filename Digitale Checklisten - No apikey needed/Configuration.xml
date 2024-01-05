@@ -288,7 +288,7 @@
 
 
 	<Adapter name="GET SINGLE Dossier"
-		description="Show a single dossier !!! IT SEEMS THE API CALL IS THE SAME WITH GET ALL, DOCUMENTATION ERROR? !!!">
+		description="Show a single dossier !!! IT SEEMS THE API CALL IS THE SAME WITH GET ALL, MIGHT REQUIRE INPUT !!!">
 
 		<Receiver name="GET SINGLE Dossier">
 
@@ -599,7 +599,7 @@
 
 
 	<Adapter name="GET SINGLE Person"
-		description="Show a single person">
+		description="Show a single person !!! IT SEEMS THE API CALL IS THE SAME WITH GET ALL, MIGHT REQUIRE INPUT !!!">
 
 		<Receiver name="GET SINGLE Person">
 

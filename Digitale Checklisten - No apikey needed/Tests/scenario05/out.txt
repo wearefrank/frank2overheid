@@ -1,0 +1,13 @@
+{
+    "users": [{
+		"id": 1,
+		"name": "Eddy  Steenmeijer",
+		"email": "e.steenmeijer@digitalechecklisten.nl",
+		"group_id": 10
+	}, {
+		"id": 2,
+		"name": "Lucas  Oost Lievense",
+		"email": "l.oostlievense@digitalechecklisten.nl",
+		"group_id": 10
+	}]
+}

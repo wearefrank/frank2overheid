@@ -1,0 +1,13 @@
+{
+  "person": {
+    "id": 18196,
+    "group_id": 10,
+    "name": "Eddy Steenmeijers",
+    "email": null,
+    "phonenumber": null,
+    "role": "Eigenaar",
+    "created_at": "2014-01-05T19:17:35+01:00",
+    "updated_at": "2014-01-05T19:17:35+01:00",
+    "dossier_ids": [36464]
+  }
+}

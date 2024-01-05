@@ -1,0 +1,13 @@
+{
+  "location": {
+    "id": 52335,
+    "dossier_id": null,
+    "field_id": null,
+    "name": "Kantoor",
+    "address": "Linnaeusparkweg 109 III",
+    "city": "Amsterdam",
+    "zip": "1098 CV",
+    "lat": 52.353,
+    "lng": 4.9359
+  }
+}
