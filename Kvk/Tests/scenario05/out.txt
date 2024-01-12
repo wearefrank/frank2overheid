@@ -1,0 +1,1 @@
+{"kvkNummer":"55505201","aantalCommercieleVestigingen":0,"aantalNietCommercieleVestigingen":0,"totaalAantalVestigingen":0,"links":[{"rel":"self","href":"https://api.kvk.nl/test/api/v1/basisprofielen/55505201/vestigingen"},{"rel":"basisprofiel","href":"https://api.kvk.nl/test/api/v1/basisprofielen/55505201"}]}

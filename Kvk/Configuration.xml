@@ -1,0 +1,235 @@
+<Configuration name="myfirstconfig">
+    <Adapter name="exampleadapter">
+
+        <Receiver name="examplereceiver">
+            <JavaListener name="examplelistener" servicename="example1"/>
+        </Receiver>
+
+        <Pipeline firstPipe="thefirstpipe">
+            <FixedResultPipe name="thefirstpipe" returnString="Hello Frank!">
+                <Forward name="success" path="EXIT"/>
+            </FixedResultPipe>
+            <Exit path="EXIT" state="success"/>
+        </Pipeline>
+
+    </Adapter>
+    <Adapter name="KVK verzoeken"
+        description="GET REQUEST - Testverbinding met handelsnaam test">
+
+        <Receiver name="KVK verzoeken">
+
+            <JavaListener name="KVK verzoeken"/>
+            <!-- url="https://api.kvk.nl/test/api/v1/zoeken?handelsnaam=test" -->
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam" >
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?handelsnaam=test" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                    <!--<Param name="allowSelfSignedCertificates" value="true" />
+                    <Param name="ignoreCertificateExpiredException" value="true" /> -->
+                    <!-- Configure HttpSession with keystore and truststore settings -->
+                    <!-- <HttpSession
+                        keystore = "C:\Program Files\Java\jdk-21\bin\keytool.exe" keystoreType="PKCS12" keystorePassword="changeit"
+
+                        truststore = "C:\Program Files\Java\jdk-21\lib\security\cacerts" truststoreType="PKCS12" truststorePassword="changeit">
+                        c++ frankrunner overlaten
+                    </HttpSession>-->
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK vestigingsprofiel"
+        description="GET REQUEST - Testverbinding met vestigingsprofiel 990000246530">
+
+        <Receiver name="KVK vestigingsprofiel">
+
+            <JavaListener name="KVK verzoeken2"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam2">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/vestigingsprofielen/990000246530" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK basisprofiel"
+        description="GET REQUEST - Testverbinding met basisprofiel 55505201">
+
+        <Receiver name="KVK basisprofiel">
+
+            <JavaListener name="KVK verzoeken3"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam3">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/55505201" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK eigenaar"
+        description="GET REQUEST - Testverbinding met eigenaar info van basisprofiel 55505201">
+
+        <Receiver name="KVK eigenaar">
+
+            <JavaListener name="KVK verzoeken4"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam4">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/55505201/eigenaar" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>     
+
+    <Adapter name="KVK hoofdvestiging"
+        description="GET REQUEST - Testverbinding met hoofdvestiging info van basisprofiel 90003942">
+
+        <Receiver name="KVK hoofdvestiging">
+
+            <JavaListener name="KVK verzoeken5"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam5">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/90003942/hoofdvestiging" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>           
+
+    <Adapter name="KVK verzoeken Vestigingen"
+        description="GET REQUEST - Testverbinding met vestigingen info van basisprofiel 55505201">
+
+        <Receiver name="KVK verzoeken Vestigingen">
+
+            <JavaListener name="KVK verzoeken Vestigingen"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam6">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/55505201/vestigingen" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+                <Forward name="success" path="EXIT"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthenticated"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="500" path="ServerError"/>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>  
+</Configuration>
