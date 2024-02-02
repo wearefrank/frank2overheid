@@ -216,7 +216,7 @@
             <SenderPipe name="KVK zoeken" >
 
                 <!-- Configure HttpSender -->
-                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?handelsnaam=Japiksestraat" methodType="GET" headersParams="apikey">
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?straatnaam=Japiksestraat" methodType="GET" headersParams="apikey">
                     <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
                 </HttpSender>
 
@@ -232,8 +232,37 @@
 
     </Adapter>
 
-    <Adapter name="KVK verzoeken Zoeken op Huisnummer"
-        description="GET REQUEST - Testverbinding zoeken met als Huisnummer 36">
+    <Adapter name="KVK verzoeken Zoeken op Straatnaam2"
+        description="GET REQUEST - Testverbinding zoeken met als Straatnaam Blaauwweg">
+
+        <Receiver name="KVK verzoeken Zoeken op type resultaat, aantal resultaten per pagina, specifieke paginanummer weergeven">
+
+            <JavaListener name="KVK zoeken6e"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken" >
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?straatnaam=Blaauwweg" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK verzoeken Zoeken op Huisnummer en Postcode"
+        description="GET REQUEST - Testverbinding zoeken met als Huisnummer 163 en Postcode 3328XD">
 
         <Receiver name="KVK verzoeken Zoeken op type resultaat, aantal resultaten per pagina, specifieke paginanummer weergeven">
 
@@ -245,7 +274,7 @@
             <SenderPipe name="KVK zoeken" >
 
                 <!-- Configure HttpSender -->
-                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?Huisnummer=36" methodType="GET" headersParams="apikey">
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=163&amp;postcode=3328XD" methodType="GET" headersParams="apikey">
                     <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
                 </HttpSender>
 
@@ -261,8 +290,9 @@
 
     </Adapter>
 
-    <Adapter name="KVK verzoeken Zoeken op Huisnummertoevoeging"
-        description="GET REQUEST - Testverbinding zoeken met als Huisnummertoevoeging a">
+    <!--
+    <Adapter name="KVK verzoeken Zoeken op Huisnummer en Huisnummertoevoeging"
+        description="GET REQUEST - Testverbinding zoeken met als Huisnummer 36 en Huisnummertoevoeging spatie">
 
         <Receiver name="KVK verzoeken Zoeken op type resultaat, aantal resultaten per pagina, specifieke paginanummer weergeven">
 
@@ -273,8 +303,8 @@
 
             <SenderPipe name="KVK zoeken" >
 
-                <!-- Configure HttpSender -->
-                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummertoevoeging=a" methodType="GET" headersParams="apikey">
+                < Configure HttpSender>
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=36&amp;huisnummerToevoeging=_" methodType="GET" headersParams="apikey">
                     <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
                 </HttpSender>
 
@@ -289,9 +319,10 @@
         </Pipeline>
 
     </Adapter>
+    -->
 
-    <Adapter name="KVK verzoeken Zoeken op Postcode"
-        description="GET REQUEST - Testverbinding zoeken met als Postcode 5624EC">
+    <Adapter name="KVK verzoeken Zoeken op Huisnummer en Postcode2"
+        description="GET REQUEST - Testverbinding zoeken met als Huisnummer 36 en Postcode 5624EC">
 
         <Receiver name="KVK verzoeken Zoeken op type resultaat, aantal resultaten per pagina, specifieke paginanummer weergeven">
 
@@ -303,7 +334,7 @@
             <SenderPipe name="KVK zoeken" >
 
                 <!-- Configure HttpSender -->
-                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?postcode=5624EC" methodType="GET" headersParams="apikey">
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=36&amp;postcode=5624EC" methodType="GET" headersParams="apikey">
                     <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
                 </HttpSender>
 
@@ -333,6 +364,35 @@
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?plaats=Eindhoven" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK verzoeken Zoeken op Plaats2"
+        description="GET REQUEST - Testverbinding zoeken met als Plaats Dordrecht">
+
+        <Receiver name="KVK verzoeken Zoeken op type resultaat, aantal resultaten per pagina, specifieke paginanummer weergeven">
+
+            <JavaListener name="KVK zoeken10e"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken" >
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?plaats=Dordrecht" methodType="GET" headersParams="apikey">
                     <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
                 </HttpSender>
 
@@ -493,6 +553,64 @@
 
     </Adapter>
 
+    <Adapter name="KVK basisprofiel2"
+        description="GET REQUEST - Testverbinding met basisprofiel 90003942">
+
+        <Receiver name="KVK basisprofiel2">
+
+            <JavaListener name="KVK verzoeken3e"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam3e">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/90003942" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
+    <Adapter name="KVK basisprofiel3"
+        description="GET REQUEST - Testverbinding met basisprofiel 90000749">
+
+        <Receiver name="KVK basisprofiel3">
+
+            <JavaListener name="KVK verzoeken3f"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam3f">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/90000749" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>
+
     <Adapter name="KVK eigenaar"
         description="GET REQUEST - Testverbinding met eigenaar info van basisprofiel 55505201">
 
@@ -521,6 +639,64 @@
         </Pipeline>
 
     </Adapter>     
+
+    <Adapter name="KVK eigenaar2"
+        description="GET REQUEST - Testverbinding met eigenaar info van basisprofiel 90003942">
+
+        <Receiver name="KVK eigenaar2">
+
+            <JavaListener name="KVK verzoeken4e"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam4e">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/90003942/eigenaar" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>  
+
+    <Adapter name="KVK eigenaar3"
+        description="GET REQUEST - Testverbinding met eigenaar info van basisprofiel 90000749">
+
+        <Receiver name="KVK eigenaar3">
+
+            <JavaListener name="KVK verzoeken4f"/>
+        </Receiver>
+
+        <Pipeline>
+
+            <SenderPipe name="KVK zoeken op handelsnaam4f">
+
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/90000749/eigenaar" methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+
+            </SenderPipe>
+
+            <EchoPipe name="echoPipe">
+
+            </EchoPipe>
+
+            <Exit path="EXIT" state="success"/>
+
+        </Pipeline>
+
+    </Adapter>  
 
     <Adapter name="KVK hoofdvestiging"
         description="GET REQUEST - Testverbinding met hoofdvestiging info van basisprofiel 90003942">
@@ -579,4 +755,5 @@
         </Pipeline>
 
     </Adapter>  
+
 </Configuration>
