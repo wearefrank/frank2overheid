@@ -84,7 +84,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Templates">
+			<SenderPipe name="POST Checklists">
 				<!-- Configure HttpSender -->
 				<!-- 
 					{
