@@ -22,7 +22,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Kadaster Natuurlijke Personen">
+			<SenderPipe name="KadasterNatuurlijkePersonen">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -60,7 +60,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Niet Natuurlijke Personen">
+			<SenderPipe name="NietNatuurlijkePersonen">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -98,7 +98,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="KadastraalOnroerendeZaak">
+			<SenderPipe name="GetKadastraalOnroerendeZaak">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -135,7 +135,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Zakelijk Gerechtigden">
+			<SenderPipe name="ZakelijkGerechtigden">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -172,7 +172,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Hypotheek">
+			<SenderPipe name="GetHypotheek">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -209,7 +209,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Beslagen">
+			<SenderPipe name="GetBeslagen">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -246,7 +246,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Privaatrechtelijke Beperkingen">
+			<SenderPipe name="PrivaatrechtelijkeBeperkingen">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -283,7 +283,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Publiekrechtelijke Beperkingen">
+			<SenderPipe name="PubliekrechtelijkeBeperkingen">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -319,7 +319,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Stukken">
+			<SenderPipe name="GetStukken">
 
 				<!-- Configure HttpSender -->
 				<HttpSender

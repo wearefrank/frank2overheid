@@ -68,7 +68,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken op handelsnaam;plaats;straatnaam" >
+            <SenderPipe name="KVK zoeken op handelsnaam plaats straatnaam" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?handelsnaam=test&amp;type=hoofdvestiging&amp;plaats=Veendam&amp;straatnaam=Rietdekkershof" methodType="GET" headersParams="apikey">
@@ -97,7 +97,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken2" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?type=nevenvestiging&amp;aantal=4&amp;pagina=2" methodType="GET" headersParams="apikey">
@@ -126,7 +126,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken3" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?rsin=992978816" methodType="GET" headersParams="apikey">
@@ -155,7 +155,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken4" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?vestigingsnummer=990000246530" methodType="GET" headersParams="apikey">
@@ -184,7 +184,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken5" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?handelsnaam=Company" methodType="GET" headersParams="apikey">
@@ -213,7 +213,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken6" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?straatnaam=Japiksestraat" methodType="GET" headersParams="apikey">
@@ -242,7 +242,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken6e" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?straatnaam=Blaauwweg" methodType="GET" headersParams="apikey">
@@ -271,7 +271,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken7" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=163&amp;postcode=3328XD" methodType="GET" headersParams="apikey">
@@ -301,7 +301,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken8" >
 
                 < Configure HttpSender>
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=36&amp;huisnummerToevoeging=_" methodType="GET" headersParams="apikey">
@@ -331,7 +331,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken9" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?huisnummer=36&amp;postcode=5624EC" methodType="GET" headersParams="apikey">
@@ -360,7 +360,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken10" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?plaats=Eindhoven" methodType="GET" headersParams="apikey">
@@ -389,7 +389,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken10e" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?plaats=Dordrecht" methodType="GET" headersParams="apikey">
@@ -418,7 +418,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken11" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?type=hoofdvestiging" methodType="GET" headersParams="apikey">
@@ -447,7 +447,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken12" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?InclusiefinactieveRegistraties" methodType="GET" headersParams="apikey">
@@ -476,7 +476,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken" >
+            <SenderPipe name="KVK zoeken13" >
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/zoeken?type=rechtspersoon" methodType="GET" headersParams="apikey">
@@ -534,7 +534,7 @@
 
         <Pipeline>
 
-            <SenderPipe name="KVK zoeken op handelsnaam3">
+            <SenderPipe name="KvkZoekenOpHandelsnaam3">
 
                 <!-- Configure HttpSender -->
                 <HttpSender url="https://api.kvk.nl/test/api/v1/basisprofielen/55505201" methodType="GET" headersParams="apikey">
