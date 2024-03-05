@@ -9,18 +9,18 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Templates">
+			<SenderPipe name="GetTemplates">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
 					url="https://private-anon-e48d03d5f8-digitalechecklisten.apiary-mock.com/api/v1/templates">
 				</HttpSender>
 
-				<Forward name="success" path="EXIT" />
+				<!-- <Forward name="success" path="EXIT" />
 				<Forward name="400" path="BadRequest" />
 				<Forward name="401" path="NotAuthenticated" />
 				<Forward name="404" path="NotFound" />
-				<Forward name="500" path="ServerError" />
+				<Forward name="500" path="ServerError" /> -->
 
 			</SenderPipe>
 
@@ -48,7 +48,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET Checklists">
+			<SenderPipe name="GetChecklists">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -84,7 +84,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Checklists">
+			<SenderPipe name="PostChecklists">
 				<!-- Configure HttpSender -->
 				<!-- 
 					{
@@ -153,7 +153,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Answers">
+			<SenderPipe name="GetAnswers">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -189,7 +189,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Users">
+			<SenderPipe name="GetUsers">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -225,7 +225,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="Dossier types">
+			<SenderPipe name="DossierTypes">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -261,7 +261,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET ALL Dossier">
+			<SenderPipe name="GetAllDossier">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -298,7 +298,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET SINGLE Dossier">
+			<SenderPipe name="GetSingleDossier">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -336,7 +336,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Dossier">
+			<SenderPipe name="PostDossier">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -387,7 +387,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Dossier with location">
+			<SenderPipe name="PostDossierWithLocation">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -438,7 +438,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="PUT Dossier">
+			<SenderPipe name="PutDossier">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -486,7 +486,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET Locations">
+			<SenderPipe name="GetLocations">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -522,7 +522,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Locations">
+			<SenderPipe name="PostLocations">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -572,7 +572,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET ALL People">
+			<SenderPipe name="GetAllPeople">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -609,7 +609,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="GET SINGLE Person">
+			<SenderPipe name="GetSinglePerson">
 
 				<!-- Configure HttpSender -->
 				<HttpSender
@@ -645,7 +645,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="POST Person">
+			<SenderPipe name="PostPerson">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -694,7 +694,7 @@
 
 		<Pipeline>
 
-			<SenderPipe name="PUT Person">
+			<SenderPipe name="PutPerson">
 
 				<!-- Configure HttpSender -->
 				<!--
