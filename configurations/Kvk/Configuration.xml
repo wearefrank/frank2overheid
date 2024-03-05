@@ -1,18 +1,4 @@
-<Configuration name="myfirstconfig">
-    <Adapter name="exampleadapter">
-
-        <Receiver name="examplereceiver">
-            <JavaListener name="examplelistener" servicename="example1"/>
-        </Receiver>
-
-        <Pipeline firstPipe="thefirstpipe">
-            <FixedResultPipe name="thefirstpipe" returnString="Hello Frank!">
-                <Forward name="success" path="EXIT"/>
-            </FixedResultPipe>
-            <Exit path="EXIT" state="success"/>
-        </Pipeline>
-
-    </Adapter>
+<Configuration name="Kvk">
     <Adapter name="KVK verzoeken Zoeken"
         description="GET REQUEST - Testverbinding zoeken met als handelsnaam test">
 
@@ -52,7 +38,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -81,7 +67,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -110,7 +96,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -139,7 +125,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -168,7 +154,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -197,7 +183,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -226,7 +212,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -255,7 +241,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -284,7 +270,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -314,7 +300,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -344,7 +330,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -373,7 +359,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -402,7 +388,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -431,7 +417,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -460,7 +446,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -489,7 +475,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -518,7 +504,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -547,7 +533,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -576,7 +562,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -605,7 +591,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -634,7 +620,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -663,7 +649,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -692,7 +678,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -721,7 +707,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 
@@ -750,7 +736,7 @@
 
             </EchoPipe>
 
-            <Exit path="EXIT" state="success"/>
+            <Exit name="EXIT" state="success"/>
 
         </Pipeline>
 

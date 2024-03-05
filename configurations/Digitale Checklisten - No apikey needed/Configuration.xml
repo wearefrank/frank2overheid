@@ -1,4 +1,4 @@
-<Configuration name="Digitale Checklisten Config">
+<Configuration name="Digitale Checklisten - No apikey needed">
 	<Adapter name="Templates"
 		description="Request returned een template voor een checklist">
 
@@ -28,7 +28,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -67,7 +67,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -136,7 +136,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -172,7 +172,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -208,7 +208,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -244,7 +244,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -280,7 +280,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -317,7 +317,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -370,24 +370,24 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
 	</Adapter>
 
 
-	<Adapter name="POST Dossier W/ location"
+	<Adapter name="POST Dossier with location"
 		description="Post with Location">
 
-		<Receiver name="POST Dossier W/ location">
+		<Receiver name="POST Dossier with location">
 
-			<JavaListener name="POST Dossier W/ location" />
+			<JavaListener name="POST Dossier with location" />
 		</Receiver>
 
 		<Pipeline>
 
-			<SenderPipe name="POST Dossier W/ location">
+			<SenderPipe name="POST Dossier with location">
 
 				<!-- Configure HttpSender -->
 				<!--
@@ -421,7 +421,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -469,7 +469,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -505,7 +505,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -555,7 +555,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -591,7 +591,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -628,7 +628,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -677,7 +677,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -725,7 +725,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 

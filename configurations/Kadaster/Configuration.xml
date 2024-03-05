@@ -1,4 +1,4 @@
-<Configuration name="Kadaster Config">
+<Configuration name="Kadaster">
 	<Adapter name="TestCredentials">
 		<Receiver name="TestCredentials">
 			<JavaListener name="TestCredentials" />
@@ -8,7 +8,7 @@
 				returnString="${credential:username:alias1} ${credential:password:alias1}">
 				<Forward name="success" path="EXIT" />
 			</FixedResultPipe>
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 		</Pipeline>
 	</Adapter>
 
@@ -43,7 +43,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -81,7 +81,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 
@@ -119,7 +119,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -156,7 +156,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -193,7 +193,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -230,7 +230,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -267,7 +267,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -304,7 +304,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
@@ -340,7 +340,7 @@
 
 			</EchoPipe>
 
-			<Exit path="EXIT" state="success" />
+			<Exit name="EXIT" state="success" />
 
 		</Pipeline>
 	</Adapter>
