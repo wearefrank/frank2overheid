@@ -938,4 +938,42 @@
 
         </Pipeline>
     </Adapter>
+
+    <Adapter name="KVK verzoeken NaamGeving"
+        description="GET REQUEST - Testverbinding met naamgeving info van basisprofiel 90005414">
+
+        <Receiver name="KVK verzoeken NaamGeving">
+            <JavaListener name="KVK verzoeken NaamGeving" />
+        </Receiver>
+
+        <Pipeline>
+            <Exits>
+                <Exit name="Exit" state="SUCCESS" />
+                <Exit name="BadRequest" state="ERROR" code="400" empty="true" />
+                <Exit name="NotAuthorized" state="ERROR" code="401" empty="true" />
+                <Exit name="NotFound" state="ERROR" code="404" empty="true" />
+                <Exit name="NotAcceptable" state="ERROR" code="406" empty="true" />
+                <Exit name="ServerError" state="ERROR" code="500" />
+            </Exits>
+
+            <SenderPipe name="GET KVK verzoeken NaamGeving">
+                <!-- Configure HttpSender -->
+                <HttpSender url="https://api.kvk.nl/test/api/v1/naamgevingen/kvknummer/90005414"
+                    methodType="GET" headersParams="apikey">
+                    <Param name="apikey" value="l7xx1f2691f2520d487b902f4e0b57a0b197" />
+                </HttpSender>
+                <Forward name="success" path="echoPipe"/>
+                <Forward name="400" path="BadRequest"/>
+                <Forward name="401" path="NotAuthorized"/>
+                <Forward name="404" path="NotFound"/>
+                <Forward name="406" path="NotAcceptable"/>
+                <Forward name="500" path="ServerError"/>
+            </SenderPipe>
+            
+            <EchoPipe name="echoPipe">
+                <Forward name="success" path="Exit" />
+            </EchoPipe>
+
+        </Pipeline>
+    </Adapter>
 </Configuration>
